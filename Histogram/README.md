@@ -2,20 +2,22 @@
 
 * Set up Apache Hadoop in DFS or pseudo DFS mode. Follow this manual: http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html
 * `$ hadoop com.sun.tools.javac.Main Histogram.java`
-* `$ jar cf histogram.jar Histogram*.class
+* `$ jar cf histogram.jar Histogram*.class`
 
 Assuming that:
 
-/user/joe/histogram/input - input directory in HDFS
-/user/joe/histogram/output - output directory in HDFS
+`/user/joe/histogram/input` - input directory in HDFS
+`/user/joe/histogram/output` - output directory in HDFS
 
 Put several relatively large text (e.g. War & Peace)  files to 'input' directory.
 
 * `$ hadoop jar histogram.jar Histogram histogram/input histogram/output`
 * `$ hdfs dfs -cat wordcount/output/part-r-00000 > raw_results.txt`
-* `chmod +x stats.rb && ./stats.rb raw_results.txt
+* The resulting key/value pairs produced by thre reducer are not sorted, we need to do it: 
 
-The results are length:frequency pairs.
+`chmod +x stats.rb && ./stats.rb raw_results.txt`
+
+Final results are length:frequency pairs.
 
 ```
 4: 189111
