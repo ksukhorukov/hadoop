@@ -1,4 +1,4 @@
-=== Usage
+### Usage
 
 * Set up Apache Hadoop in DFS or pseudo DFS mode. Follow this manual: http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html
 * `$ hadoop com.sun.tools.javac.Main Histogram.java`

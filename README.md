@@ -1,7 +1,7 @@
-== Studing Hadoop
+## Hadoop
 
 Examples: 
 
-=== Histogram
+### Histogram
 
 Outputs a histogram of the length of words in the text.
