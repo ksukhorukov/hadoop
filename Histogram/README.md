@@ -9,7 +9,16 @@ Assuming that:
 `/user/joe/histogram/input` - input directory in HDFS
 `/user/joe/histogram/output` - output directory in HDFS
 
-Put several relatively large text (e.g. War & Peace)  files to 'input' directory.
+Put relatively large text (e.g. War & Peace)  file/files to 'input' directory.
+
+`$ hdfs dfs -put warandpeace.txt histogram/input`
+
+Check it:
+
+```
+$ bin/hdfs dfs -ls histogram/input/
+/user/joe/histogram/input/warandpeace.txt 
+```
 
 * `$ hadoop jar histogram.jar Histogram histogram/input histogram/output`
 * `$ hdfs dfs -cat wordcount/output/part-r-00000 > raw_results.txt`
